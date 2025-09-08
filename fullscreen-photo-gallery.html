@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fullscreen Photo Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .swiper-pagination-bullet {
+            background: #fff; 
+            opacity: 0.8;
+            box-shadow: 0 0 4px rgba(0,0,0,0.6); 
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #1139a7; 
+            opacity: 1;
+            box-shadow: 0 0 6px rgba(0,0,0,0.8);
+        }
+
+        .swiper-button-prev {
+            left: 15px;
+            color: #fff;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .swiper-button-next {
+            right: 15px;
+            color: #fff;
+            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body class="m-0 p-0 bg-black">
+
+  <!-- Fullscreen Swiper -->
+  <div class="swiper h-screen w-screen flex items-center justify-center">
+    <div class="swiper-wrapper h-full w-full">
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-1.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 1">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-2.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 2">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-3.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 3">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-4.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 4">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-5.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 5">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-6.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 6">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-7.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 7">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-8.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 8">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-9.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 9">
+      </div>
+       <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-10.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 10">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-11.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 11">
+      </div>
+      <div class="swiper-slide flex items-center justify-center">
+        <img src="images/liliia-aleksei-photo-12.jpg" class="gallery-img w-full h-full object-cover" alt="Wedding photo 12">
+      </div>
+    </div>
+
+    <!-- Navigation & Pagination -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Initialize Swiper
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    });
+  </script>
+
+</body>
+</html>
