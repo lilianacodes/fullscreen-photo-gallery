@@ -6,6 +6,7 @@
     <title>Fullscreen Photo Gallery</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         .swiper-pagination-bullet {
             background: #fff; 
@@ -30,9 +31,42 @@
             color: #fff;
             text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
         }
+
+        /* Top-left project info block with glassmorphism effect */
+        .project-info {
+            position: absolute;
+            top: 15px;          
+            left: 0;
+            background: rgba(200, 200, 200, 0.25);  /* light gray, semi-transparent */
+            backdrop-filter: blur(10px);              /* glass blur effect */
+            -webkit-backdrop-filter: blur(10px);      /* Safari support */
+            padding: 15px; 
+            width: 20%;                 
+            display: flex;
+            flex-direction: column;
+            align-items: center;                      /* center text horizontally */
+            justify-content: center;                  /* center vertically inside padding */
+            gap: 8px;
+            z-index: 50;
+        }
+
+        .project-info h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem; 
+            font-weight: 500;
+            margin: 0;
+            text-align: center;
+            color: #1139a7;
+        }
+     
     </style>
 </head>
 <body class="m-0 p-0 bg-black">
+
+  <!-- Top-left project info -->
+  <div class="project-info">
+    <h1>Sea Wedding</h1>
+  </div>
 
   <!-- Fullscreen Swiper -->
   <div class="swiper h-screen w-screen flex items-center justify-center">
@@ -105,6 +139,6 @@
       },
     });
   </script>
-  
+
 </body>
 </html>
