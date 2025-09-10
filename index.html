@@ -20,18 +20,6 @@
             box-shadow: 0 0 6px rgba(0,0,0,0.8);
         }
 
-        .swiper-button-prev {
-            left: 15px;
-            color: #fff;
-            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-        }
-
-        .swiper-button-next {
-            right: 15px;
-            color: #fff;
-            text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-        }
-
         /* Top-left project info block */
         .project-info {
             position: absolute;
@@ -148,9 +136,7 @@
       </div>
     </div>
 
-    <!-- Navigation & Pagination -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <!-- Pagination -->
     <div class="swiper-pagination"></div>
   </div>
 
@@ -171,10 +157,6 @@
       pagination: { 
         el: '.swiper-pagination', 
         clickable: true,   // allow clicking on bullets
-      },
-      navigation: { 
-        nextEl: '.swiper-button-next', 
-        prevEl: '.swiper-button-prev', 
       },
     });
   </script>
