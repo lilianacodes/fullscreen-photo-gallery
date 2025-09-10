@@ -159,6 +159,10 @@
         clickable: true,   // allow clicking on bullets
       },
     });
+
+    // disable right-click context menu on the page to prevent direct saving of photos by users
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
   </script>
 
 </body>
