@@ -4,6 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fullscreen Photo Gallery</title>
+
+    <!-- SEO optimization -->
+    <meta name="description" content="Fullscreen photo gallery capturing Sea Wedding moments by photographer Artemio Galavera. High-quality wedding photography with a beautiful visual experience.">
+    <meta name="keywords" content="Sea Wedding, Wedding Photography, Photo Gallery, Wedding Photos, Fullscreen Gallery, lilianacodes">
+    <meta name="author" content="lilianacodes">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Sea Wedding Photo Gallery | Aleksei & Liliia">
+    <meta property="og:description" content="Fullscreen photo gallery capturing Sea Wedding moments by photographer Artemio Galavera.">
+    <meta property="og:image" content="images/liliia-aleksei-photo-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lilianacodes.github.io/fullscreen-photo-gallery/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sea Wedding Photo Gallery | Aleksei & Liliia">
+    <meta name="twitter:description" content="Fullscreen photo gallery capturing Sea Wedding moments by photographer Artemio Galavera.">
+    <meta name="twitter:image" content="images/liliia-aleksei-photo-1.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
@@ -56,7 +76,7 @@
             }    
         }
 
-        /* Tablets */
+        /* For tablets */
         @media (max-width: 1024px) {
           .project-info {
             width: 30%;                  
@@ -66,7 +86,7 @@
           }
         }
 
-        /* Large mobiles */
+        /* For large mobiles */
         @media (max-width: 768px) {
           .project-info {
             width: 40%;                 
@@ -76,7 +96,7 @@
           }
         }
 
-        /* Small mobiles */
+        /* For small mobiles */
         @media (max-width: 480px) {
           .project-info {
             width: 40%;                 
@@ -142,7 +162,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // initialize Swiper
+    // Initialize Swiper
     const swiper = new Swiper('.swiper', {
       loop: true,          // infinite loop mode 
       effect: 'fade',      // fade effect for smooth transitions
@@ -160,9 +180,8 @@
       },
     });
 
-    // disable right-click context menu on the page to prevent direct saving of photos by users
+    // Disable right-click context menu on the page to prevent direct saving of photos by users
     document.addEventListener('contextmenu', event => event.preventDefault());
-
   </script>
 
 </body>
