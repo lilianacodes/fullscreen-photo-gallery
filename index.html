@@ -33,7 +33,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
     <style>
-      /* Custom CSS only where Tailwind is insufficient */
+      /* Custom CSS overrides (only where Tailwind is insufficient) */
+      html, body {
+        cursor: none;                /* hide cursor */
+        user-select: none;           /* disable text selection */
+        -webkit-user-select: none;   /* Safari / iOS */
+        -ms-user-select: none;       /* old IE/Edge */
+      }
 
       /* Project Info Block (Fixed Top-Left with Half-Circle Right Edge) */
       .project-info {
@@ -45,8 +51,8 @@
         min-height: 80px;
         background-color: rgba(245, 245, 245, 0.85);
         display: flex;
-        align-items: center; /* center text horizontally */ 
-        justify-content: center; /* center vertically inside padding */
+        align-items: center;          /* center text horizontally */ 
+        justify-content: center;      /* center vertically inside padding */
         border-top-right-radius: 40px;
         border-bottom-right-radius: 40px;
         z-index: 50;
@@ -58,7 +64,6 @@
         font-size: 3rem;
         font-weight: 500;
         color: #1139a7;
-        /* text-align: center; */
         text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         white-space: nowrap;
         margin: 0;
