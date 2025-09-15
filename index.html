@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Fullscreen Photo Gallery</title>
 
     <!-- SEO optimization -->
@@ -24,107 +25,104 @@
     <meta name="twitter:description" content="Fullscreen photo gallery capturing Sea Wedding moments by photographer Artemio Galavera.">
     <meta name="twitter:image" content="images/liliia-aleksei-photo-1.jpg">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
     <style>
+      /* Custom CSS only where Tailwind is insufficient */
+
+      /* Project Info Block (Fixed Top-Left with Half-Circle Right Edge) */
+      .project-info {
+        position: fixed;
+        top: 30px;
+        left: 0;
+        width: 20%;
+        /* height: 60px; */
+        min-height: 80px;
+        background-color: rgba(245, 245, 245, 0.85);
+        display: flex;
+        align-items: center; /* center text horizontally */ 
+        justify-content: center; /* center vertically inside padding */
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        z-index: 50;
+        padding: 0 15px;
+      }
+
+      .project-info h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3rem;
+        font-weight: 500;
+        color: #1139a7;
+        /* text-align: center; */
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        white-space: nowrap;
+        margin: 0;
+      }
+
+      .swiper-pagination-bullet {
+        background: #fff; 
+        opacity: 0.8;
+        box-shadow: 0 0 4px rgba(0,0,0,0.6); 
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #1139a7; 
+        opacity: 1;
+        box-shadow: 0 0 6px rgba(0,0,0,0.8);
+      }
+
+      /* Mobile-specific styles (≤768px) */
+      @media (max-width: 768px) {
         html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;                         /* disable page scrolling */
+          overflow: visible;
         }
 
-        /* for mobile: prevent page scrolling */
         .swiper {
-            height: 100dvh;                           /* dynamic height */
+          height: 100dvh;
         }
 
-        .swiper-pagination-bullet {
-            background: #fff; 
-            opacity: 0.8;
-            box-shadow: 0 0 4px rgba(0,0,0,0.6); 
+        /* Show full image without cropping — override Tailwind CSS object-cover with contain */
+        .gallery-img {
+          object-fit: contain !important; 
+          max-width: 100%;
+          max-height: 100%;
         }
 
-        .swiper-pagination-bullet-active {
-            background: #1139a7; 
-            opacity: 1;
-            box-shadow: 0 0 6px rgba(0,0,0,0.8);
-        }
-
-        /* Top-left project info block */
+        /* Project Info centered top */
         .project-info {
-            position: absolute;
-            top: 30px;          
-            left: 0;
-            padding: 15px; 
-            width: 20%;     
-            background-color: #f5f5f5;            
-            display: flex;
-            flex-direction: column;
-            align-items: center;                      /* center text horizontally */
-            justify-content: center;                  /* center vertically inside padding */
-            gap: 8px;
-            z-index: 50;
+          top: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: auto;
+          height: auto;
+          background: transparent;
+          border-radius: 0;
+          padding: 0;
         }
 
         .project-info h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem; 
-            font-weight: 500;
-            margin: 0;
-            text-align: center;
-            color: #1139a7;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+          font-size: clamp(2rem, 6vw, 4rem);
+          color: #ffffff;
+          text-align: center;
         }
 
-        /* For medium desktops / large tablets (landscape) */
-        @media (min-width: 1025px) and (max-width: 1345px) {
-            .project-info {
-              width: 30%;
-            }
-            .project-info h1 {
-                font-size: 2.8rem; 
-            }    
+        /* Pagination safe-area adjustment */
+        .swiper-pagination {
+          bottom: calc(10px + env(safe-area-inset-bottom));
         }
-
-        /* For tablets */
-        @media (max-width: 1024px) {
-          .project-info {
-            width: 30%;                  
-          }
-          .project-info h1 {
-            font-size: 1.7rem;
-          }
-        }
-
-        /* For large mobiles */
-        @media (max-width: 768px) {
-          .project-info {
-            width: 40%;                 
-          }
-          .project-info h1 {
-            font-size: 1.5rem;
-          }
-        }
-
-        /* For small mobiles */
-        @media (max-width: 480px) {
-          .project-info {
-            width: 40%;                 
-          }
-          .project-info h1 {
-            font-size: 1.3rem;
-          }
-        }
-     
+      }
     </style>
 </head>
 
 <!-- Full dynamic viewport height (100dvh) to prevent vertical scrolling on mobile devices -->
 <body class="m-0 p-0 bg-black min-h-[100dvh]">
 
-  <!-- Top-left project info -->
+  <!-- Project Info -->
   <div class="project-info">
     <h1>Sea Wedding</h1>
   </div>
@@ -178,7 +176,7 @@
   <script>
     // Initialize Swiper
     const swiper = new Swiper('.swiper', {
-      loop: true,          // infinite loop mode 
+      loop: true,          // infinite loop mode
       effect: 'fade',      // fade effect for smooth transitions
       speed: 1200,         // transition duration in ms
       fadeEffect: {
@@ -194,7 +192,7 @@
       },
     });
 
-    // Disable right-click context menu on the page to prevent direct saving of photos by users
+    // Disable right-click context menu
     document.addEventListener('contextmenu', event => event.preventDefault());
   </script>
 
